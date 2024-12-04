@@ -1,5 +1,6 @@
 package org.example.nas.test;
-import com.sun.jna.*;
+
+import com.sun.jna.Native;
 import com.sun.jna.platform.win32.WinDef;
 import com.sun.jna.ptr.PointerByReference;
 import com.sun.jna.win32.StdCallLibrary;
@@ -11,10 +12,13 @@ public interface MyUser32 extends StdCallLibrary {
 
     // 声明EnumWindows函数
     boolean EnumWindows(EnumWindowsProc lpEnumFunc, PointerByReference lParam);
+
     // 声明GetWindowText函数
     int GetWindowText(WinDef.HWND hWnd, byte[] lpString, int nMaxCount);
+
     // 声明GetWindowTextLength函数
     int GetWindowTextLength(WinDef.HWND hWnd);
+
     // 声明EnumWindows回调函数的接口
     interface EnumWindowsProc extends StdCallCallback {
         boolean callback(WinDef.HWND hwnd, PointerByReference lParam);

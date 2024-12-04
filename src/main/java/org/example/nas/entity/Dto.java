@@ -12,42 +12,32 @@ import java.util.List;
 @Data
 public class Dto<T> {
 
-    /*传递信息*/
-    private String msg;
-
-    /*是否成功*/
-    private Boolean isSuccess;
-
-    /*执行代码*/
-    private String code;
-
-    /*用户id*/
-    private String userId;
-
-    /*调用类*/
-    private String className;
-
-    /*调用方法*/
-    private String methodName;
-
-    /*是否有文件*/
-    private Boolean isHaveFile;
-
     /*用户信息*/
     public List<String> systemMsgList = new ArrayList<>();
-
     /*参数*/
     public List<Object> param;
-
     /*携带数据*/
     public T data;
-
+    /*传递信息*/
+    private String msg;
+    /*是否成功*/
+    private Boolean isSuccess;
+    /*执行代码*/
+    private String code;
+    /*用户id*/
+    private String userId;
+    /*调用类*/
+    private String className;
+    /*调用方法*/
+    private String methodName;
+    /*是否有文件*/
+    private Boolean isHaveFile;
     /*携带文件*/
     private String fileStr;
 
     /*成功方法*/
     @NotNull
-    public static Dto<Object> success(String msg, Object data, String fileStr){
+    public static Dto<Object> success(String msg, Object data, String fileStr) {
 
         Dto<Object> dto = new Dto<>();
 
@@ -62,7 +52,7 @@ public class Dto<T> {
 
     /*成功方法*/
     @NotNull
-    public static Dto<Object> success(String msg, Object data){
+    public static Dto<Object> success(String msg, Object data) {
 
         Dto<Object> dto = new Dto<>();
 
@@ -76,7 +66,7 @@ public class Dto<T> {
 
     /*成功方法重载*/
     @NotNull
-    public static Dto<Object> success(String msg){
+    public static Dto<Object> success(String msg) {
 
         Dto<Object> dto = new Dto<>();
 
@@ -89,7 +79,7 @@ public class Dto<T> {
 
     /*失败方法*/
     @NotNull
-    public static Dto<Object> fail(String msg, Object data, String code){
+    public static Dto<Object> fail(String msg, Object data, String code) {
 
         Dto<Object> dto = new Dto<>();
 
@@ -103,7 +93,7 @@ public class Dto<T> {
 
     /*失败方法重载*/
     @NotNull
-    public static Dto<Object> fail(String msg, Object data){
+    public static Dto<Object> fail(String msg, Object data) {
 
         Dto<Object> dto = new Dto<>();
 
@@ -117,7 +107,7 @@ public class Dto<T> {
 
     /*失败方法重载*/
     @NotNull
-    public static Dto<Object> fail(String msg){
+    public static Dto<Object> fail(String msg) {
 
         Dto<Object> dto = new Dto<>();
 
@@ -131,7 +121,7 @@ public class Dto<T> {
 
     /*失败方法重载*/
     @NotNull
-    public static Dto<Object> fail(String msg, String code){
+    public static Dto<Object> fail(String msg, String code) {
 
         Dto<Object> dto = new Dto<>();
 
@@ -144,7 +134,7 @@ public class Dto<T> {
 
     /*请求数据方法*/
     @NotNull
-    public static Dto<Object> query(String userId, String className, String methodName, List<Object> param){
+    public static Dto<Object> query(String userId, String className, String methodName, List<Object> param) {
 
         Dto<Object> dto = new Dto<>();
 
@@ -158,7 +148,7 @@ public class Dto<T> {
 
     /*请求数据方法*/
     @NotNull
-    public static Dto<Object> query(String className, String methodName, List<Object> param){
+    public static Dto<Object> query(String className, String methodName, List<Object> param) {
 
         Dto<Object> dto = new Dto<>();
 

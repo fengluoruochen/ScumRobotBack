@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.example</groupId>
-  <artifactId>RimemapleScumRobotBack</artifactId>
+  <artifactId>ScumRobotBack</artifactId>
   <packaging>war</packaging>
   <version>0.1</version>
   <name>RimemapleScumRobot Maven Webapp</name>
@@ -35,7 +35,38 @@
       <artifactId>jna-platform</artifactId>
       <version>5.7.0</version>
     </dependency>
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activemq-all</artifactId>
+      <version>6.1.4</version>
+      <classifier>sources</classifier>
+      <type>java-source</type>
+    </dependency>
   </dependencies>
+  <repositories>
+    <repository>
+      <id>aliyun-repo</id>
+      <url>https://maven.aliyun.com/repository/public</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>aliyun-plugin-repo</id>
+      <url>https://maven.aliyun.com/repository/public</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
   <build>
     <finalName>RimemapleScumRobot</finalName>
     <plugins>

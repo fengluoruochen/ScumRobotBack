@@ -1,6 +1,4 @@
 package org.example.nas.test;
-import com.sun.jna.platform.win32.User32;
-import com.sun.jna.platform.win32.WinDef.HWND;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
@@ -20,7 +18,7 @@ public class RobotTest {
         // 获取屏幕分辨率
         Dimension screenSize = toolkit.getScreenSize();
         // 将鼠标移动到窗口中间
-        robot.mouseMove((int)screenSize.getWidth()/2,(int)screenSize.getHeight()/2);
+        robot.mouseMove((int) screenSize.getWidth() / 2, (int) screenSize.getHeight() / 2);
 
         // 点击鼠标左键
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);

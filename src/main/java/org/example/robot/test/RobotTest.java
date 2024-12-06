@@ -1,4 +1,4 @@
-package org.example.nas.test;
+package org.example.robot.test;
 
 import java.awt.*;
 import java.awt.event.InputEvent;

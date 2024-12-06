@@ -1,4 +1,4 @@
-package org.example.nas.entity;
+package org.example.robot.entity;
 
 import lombok.Data;
 import org.jetbrains.annotations.NotNull;

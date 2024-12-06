@@ -5,20 +5,27 @@
   <artifactId>ScumRobotBack</artifactId>
   <packaging>war</packaging>
   <version>0.1</version>
-  <name>RimemapleScumRobot Maven Webapp</name>
+  <name>ScumRobotBack Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.6.6</version>
+    <relativePath/>
+  </parent>
+  <properties>
+    <java.version>17</java.version>
+  </properties>
+
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+
+    <!--Lombok-->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.26</version>
     </dependency>
+
+    <!--jna-->
     <dependency>
       <groupId>org.jetbrains</groupId>
       <artifactId>annotations-java5</artifactId>
@@ -35,17 +42,86 @@
       <artifactId>jna-platform</artifactId>
       <version>5.7.0</version>
     </dependency>
+
+    <!--activemq-->
     <dependency>
       <groupId>org.apache.activemq</groupId>
-      <artifactId>activemq-all</artifactId>
-      <version>6.1.4</version>
-      <classifier>sources</classifier>
-      <type>java-source</type>
+      <artifactId>activemq-spring</artifactId>
     </dependency>
+
+    <!--SpringBoot-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-redis</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-jdbc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.session</groupId>
+      <artifactId>spring-session-data-redis</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.session</groupId>
+      <artifactId>spring-session-jdbc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <scope>runtime</scope>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-mail</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+
+    <!--mybatis-->
+    <dependency>
+      <groupId>org.mybatis.spring.boot</groupId>
+      <artifactId>mybatis-spring-boot-starter</artifactId>
+      <version>2.3.2</version>
+    </dependency>
+
+    <!--mysql-->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+
+    <!--fastjson-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>2.0.32</version>
+    </dependency>
+
+    <!--redis-->
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+      <version>2.1.0</version>
+    </dependency>
+
   </dependencies>
   <repositories>
     <repository>
-      <id>aliyun-repo</id>
+      <id>aliyun-repo-public</id>
       <url>https://maven.aliyun.com/repository/public</url>
       <releases>
         <enabled>true</enabled>
@@ -57,7 +133,7 @@
   </repositories>
   <pluginRepositories>
     <pluginRepository>
-      <id>aliyun-plugin-repo</id>
+      <id>aliyun-plugin-repo-public</id>
       <url>https://maven.aliyun.com/repository/public</url>
       <releases>
         <enabled>true</enabled>
@@ -67,8 +143,9 @@
       </snapshots>
     </pluginRepository>
   </pluginRepositories>
+
   <build>
-    <finalName>RimemapleScumRobot</finalName>
+    <finalName>ScumRobotBack</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -79,5 +156,21 @@
         </configuration>
       </plugin>
     </plugins>
+    <resources>
+      <resource>
+        <!-- directory:指定资源文件的位置 -->
+        <directory>src/main/java</directory>
+        <includes>
+          <!-- “**”表示任意级目录 “*”表示任意任意文件 -->
+          <include>**/*.properties</include>
+          <include>**/*.xml</include>
+        </includes>
+        <!--filtering:过滤功能 false关闭过滤-->
+        <filtering>false</filtering>
+      </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+    </resources>
   </build>
 </project>

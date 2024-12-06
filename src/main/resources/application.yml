@@ -1,0 +1,43 @@
+# 配置启动环境
+spring:
+  profiles:
+    active: dev
+  session:
+    store-type: none
+  redis:
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: 1000
+        max-idle: 8
+        min-idle: 0
+    connect-timeout: 3000
+    username: root
+    database: 0
+    port: 6379
+  main:
+    allow-bean-definition-overriding: true
+  mail:
+    username: 18730687960@163.com
+    password: MDWMTEWSTABKHEON
+    host: smtp.163.com
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
+
+    static-path-pattern: /**
+
+# 配置mybatis
+mybatis:
+  # 起别名
+  type-aliases-package: org.example.robot.pojo
+
+  # 扫描 mybatis xml文件
+  mapper-locations: classpath:mapper/*.xml

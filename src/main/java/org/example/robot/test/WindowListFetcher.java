@@ -1,4 +1,4 @@
-package org.example.nas.test;
+package org.example.robot.test;
 
 import com.sun.jna.platform.win32.WinDef;
 import com.sun.jna.ptr.PointerByReference;

@@ -9,9 +9,10 @@ public class Receiver {
     public static void main(String[] args) throws Exception{
         // 1. 获取连接工厂
         ActiveMQConnectionFactory factory = new ActiveMQConnectionFactory(
-                ActiveMQConnectionFactory.DEFAULT_USER,
-                ActiveMQConnectionFactory.DEFAULT_PASSWORD,
-                "tcp://localhost:61616"
+                //ActiveMQConnectionFactory.DEFAULT_USER,
+                //ActiveMQConnectionFactory.DEFAULT_PASSWORD,
+                "active","active#@!123",
+                "tcp://47.97.228.152:61616"
         );
 
         // 2. 获取一个向activeMq的连接

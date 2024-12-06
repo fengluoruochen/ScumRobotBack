@@ -43,12 +43,6 @@
       <version>5.7.0</version>
     </dependency>
 
-    <!--activemq-->
-    <dependency>
-      <groupId>org.apache.activemq</groupId>
-      <artifactId>activemq-spring</artifactId>
-    </dependency>
-
     <!--SpringBoot-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -72,22 +66,19 @@
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-devtools</artifactId>
-      <scope>runtime</scope>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-mail</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-activemq</artifactId>
     </dependency>
 
     <!--mybatis-->
@@ -111,7 +102,7 @@
       <version>2.0.32</version>
     </dependency>
 
-    <!--redis-->
+    <!--jedis-->
     <dependency>
       <groupId>redis.clients</groupId>
       <artifactId>jedis</artifactId>
@@ -119,6 +110,7 @@
     </dependency>
 
   </dependencies>
+
   <repositories>
     <repository>
       <id>aliyun-repo-public</id>
@@ -131,6 +123,7 @@
       </snapshots>
     </repository>
   </repositories>
+
   <pluginRepositories>
     <pluginRepository>
       <id>aliyun-plugin-repo-public</id>
